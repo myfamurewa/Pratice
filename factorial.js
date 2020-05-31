@@ -12,6 +12,7 @@ function factorial(n) {
     if(n >= 1) return n * factorial(n -1)
     else return 1;
 }
+//new factorial function
 console.log("This is factorial without recursion", naiveFactorial(5))
 console.log("This is factorial with recursion", naiveFactorial(18))
 console.log("This is factorial with recursion", factorial(5))
