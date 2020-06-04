@@ -61,3 +61,25 @@ function areThereTwo( arr ) {
         }
     }
 }
+
+const randoOptions = (level, answer) => {
+    let options=[];
+    let uniqueOptions = [];
+    for (let i=0; i<4; i++) {
+      let index = Math.floor(Math.random() * level.length);
+      console.log("level.index", level.index);
+      console.log("index", index);
+      options.push(level[index]);
+    }
+    console.log("first version of options array", options);
+    if (!options.includes(answer)) {
+      options[Math.floor(Math.random() * level.length)] = answer
+    }
+    do {
+      uniqueOptions =[... new Set (options)];
+      options.push(level[Math.floor(Math.random() * level.length)]);
+    } while (uniqueOptions.length < 4);
+    return uniqueOptions;
+  }
+
+  console.log(randoOptions(level1, "A"))
