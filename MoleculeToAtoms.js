@@ -65,9 +65,10 @@ function parseMolecule(formula) {
     return molecule(formula).parse()
 }
 
-console.log(parseMolecule("H"))
-console.log(parseMolecule("HMg"))
-console.log(parseMolecule("H2O"))
+// console.log(parseMolecule("H"))
+// console.log(parseMolecule("HMg"))
+// console.log(parseMolecule("H2O"))
+// console.log(parseMolecule("K4[ON(SO3)2]2"))
 
 
 const str = 'As2{Be4C5[BCo3(CO2)3]2}4Cu5';
@@ -165,10 +166,11 @@ function parseMolecules(formula) {
 console.log(parseMolecules("H"))
 console.log(parseMolecules("HMg"))
 console.log(parseMolecules("H2O"))
+console.log(parseMolecules("K4[ON(SO3)2]2"))
 
 //shortest solution that I saw after submitting my solution
 // I'm looking it over to understand it better
-function parseMolecule(s) {
+function parseMoleculeV(s) {
     var o = {}
     while (s != (s = s.replace(/[\[\(\{]([a-z0-9]+)[\]\)\}]([0-9]+)/gi, (f,e,n) => repeat(e,n))));
     s.replace(/([A-Z][a-z]?)([0-9]+)?/g, (f,e,n) => (o[e] = (o[e] || 0) + +(n || 1)));
@@ -179,3 +181,8 @@ function parseMolecule(s) {
     for (var r = ""; n--; r += s);
     return r;
   }
+
+//   console.log(parseMolecules("H"))
+// console.log(parseMolecules("HMg"))
+// console.log(parseMolecules("H2O"))
+// console.log(pa)
