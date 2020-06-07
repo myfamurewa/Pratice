@@ -1,38 +1,62 @@
 function balancedParentheses(string) {
   let openings = [];
   let brackets = "[]{}()<>";
-  console.log(brackets[0])
+  console.log(brackets.charAt(0))
   for (let i = 0; i < string.length; i++) {
-    console.log(string[i], "current character")
     if (
-      string[i] === brackets[0] ||
-      string[i] === brackets[2] ||
-      string[i] === brackets[4] ||
-      string[i] === brackets[6]
+      string.charAt(i) === brackets.charAt(0) ||
+      string.charAt(i) === brackets.charAt(2) ||
+      string.charAt(i) === brackets.charAt(4) ||
+      string.charAt(i) === brackets.charAt(6)
     ) {
-      openings.push(string[i]);
+      openings.push(string.charAt(i));
     } else {
       if (openings.length === 0) {
         return false;
       }
     }
     if (
-      (string[i] === brackets[1] &&
-        openings[openings.length - 1] != brackets[0]) ||
-      (string[i] === brackets[3] &&
-        openings[openings.length - 1] != brackets[2]) ||
-      (string[i] === brackets[5] &&
-        openings[openings.length - 1] != brackets[4]) ||
-      (string[i] === brackets[7] &&
-        openings[openings.length - 1] != brackets[6])
+      (string.charAt(i) === brackets.charAt(1) &&
+        openings[openings.length - 1] != brackets.charAt(0)) ||
+      (string.charAt(i) === brackets.charAt(3) &&
+        openings[openings.length - 1] != brackets.charAt(2)) ||
+      (string.charAt(i) === brackets.charAt(5) &&
+        openings[openings.length - 1] != brackets.charAt(4)) ||
+      (string.charAt(i) === brackets.charAt(7) &&
+        openings[openings.length - 1] != brackets.charAt(6))
     ) {
         return false;
     }
     openings.pop()
   }
-  return openings.length === 0 ? true : false;
+  console.log("this is openings",openings)
+  return openings.length === 0 
 }
 
+
+let isBalanced = (input) => {
+
+    let brackets = "[]{}()<>"
+    let stack = []
+  
+    for(let bracket of input) {
+      let bracketsIndex = brackets.indexOf(bracket)
+      console.log(`The current element is ${bracket}, which has an index in input of ${input.indexOf(bracket)}, and matches the bracket with index ${bracketsIndex} in brackets`)
+  
+      if(bracketsIndex % 2 === 0) {
+        stack.push(bracketsIndex + 1)
+        console.log(`this is an opening bracket. The address of its matching closing bracket in brackets is ${bracketsIndex + 1}. Adding that index to the stack makes the stack ${stack}`)
+      } else {
+        console.log(`this is a closing bracket, so ${stack.pop()} is being popped off the stack`)
+        if(stack.pop() !== bracketsIndex) {
+          return false;
+        }
+      }
+    }
+    return stack.length === 0
+  }
+  let brackets = "[]{}()<>"
+  console.log(isBalanced(brackets)); // true
 // the intuitive approach to a balanced bracket
 /*  look at the opening brackets an look for a closing bracket
 each time you find a new open parenthesis you put that at the top of the pile
