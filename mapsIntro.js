@@ -56,5 +56,5 @@ map2.entries()
 let keyObj = {},
     keyFunction = function() {};
 // created by watching the maps intro on freecode camp
-// WeakMaps
+// WeakMaps are next
 
