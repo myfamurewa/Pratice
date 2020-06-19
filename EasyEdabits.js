@@ -23,3 +23,15 @@ function toArray(num) {
 function toNumber(arr) {
 	return Number(arr.join(""))
 }
+//repetition with built in js function
+function repetition(txt, n) {
+	return txt.repeat(n)
+}
+
+//learned how to get the count of an element ina multidimensional array
+function countOnes(matrix) {
+	let flattened = matrix.flat()
+	console.log(flattened)
+	let ones = flattened.filter(n => n === 1)
+	return ones.length
+}
