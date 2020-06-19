@@ -35,3 +35,9 @@ function countOnes(matrix) {
 	let ones = flattened.filter(n => n === 1)
 	return ones.length
 }
+
+function leftDigit(num) {
+	let numbers = /[0-9]/g;
+	
+	return Number(num.match(numbers)[0]) !== 0 ? Number(num.match(numbers)[0]) : Number(num.match(numbers)[1])
+}
