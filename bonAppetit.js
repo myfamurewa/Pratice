@@ -1,8 +1,7 @@
 const bonAppetit = (bill, k, b) => {
     // bill is an array of prices
     // k is an index of the bill array that Anna refused to eat
-    // b is the amount of money that Anna contributed to the bill
-
+    // b is the amount of money that Anna  should contribute to the bill if she shares all the dishes
     let annaShare = (bill.filter(price => price !== bill[k]).reduce((acc, cv) => { return acc + cv}, 0))/2
     return  annaShare < b ? b - annaShare : "Bon Appetit"
 }
