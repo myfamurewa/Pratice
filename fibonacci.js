@@ -24,6 +24,7 @@ function forFib() {
         a = b;
         b = result
     }
+    return result
 }
 
 // function fibIt(num) {
