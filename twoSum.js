@@ -19,3 +19,23 @@ var twoSum = function(nums, target) {
 let arr = [3,2,4]
 
 console.log(twoSum(arr, 6))
+
+function twoSumv2(array, targetSum){
+    array.sort((a, b) => a - b)
+    let left = 0
+    let right = array.length - 1
+
+    while (left < right) {
+        let currentSum = array[left] + array[right]
+        if(currentSum === targetSum) {
+            return [left, right]
+        } else if ( currentSum < targetSum){
+            left++;
+        } else if ( currentSum > targetSum) {
+            right--;
+        }
+    }
+    return []
+}
+
+console.log(twoSumv2(arr, 6))
