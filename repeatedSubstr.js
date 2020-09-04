@@ -33,3 +33,13 @@ const repeatedSubstringPatternV2 = function(s){
 console.log(repeatedSubstringPatternV2("substring"))
 console.log(repeatedSubstringPatternV2("abab"))
 console.log(repeatedSubstringPatternV2("ababab"))
+
+
+const repeatedSubstringPatternV3 = function(s){
+    let newStr = (s + s).substring(1, s.length * 2 - 1)
+    return newStr.indexOf(s) !== -1
+}
+
+console.log(repeatedSubstringPatternV3("substring"))
+console.log(repeatedSubstringPatternV3("abab"))
+console.log(repeatedSubstringPatternV3("ababab"))
