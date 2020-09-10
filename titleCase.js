@@ -1,7 +1,13 @@
 function titleCase(title, minorWords) {
+    if(title.length === 0){
+        return title
+    }
+    if(minorWords){
     minorArr = minorWords.split(" ").map(word => {
     return    word.toLowerCase()
-    });
+    });} else {
+        minorArr = []
+    }
     titleArr = title.split(" ")
     for(let i = 0; i < titleArr.length; i++){
         if(i === 0){
@@ -20,3 +26,5 @@ function titleCase(title, minorWords) {
 
 console.log(titleCase('a clash of KINGS', 'a an the of'))
 console.log(titleCase('THE WIND IN THE WILLOWS', 'The In'))
+console.log(titleCase(''))
+console.log(titleCase('the quick brown fox'))
