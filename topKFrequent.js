@@ -1,5 +1,7 @@
 var topKFrequent = function(nums, k) {
+    // create a dictionary to find the frequency of each number
     let frequency = {}
+    // loop through the array and increment or add the numbers to the dictionary
     for(let i = 0; i < nums.length; i++){
         if(frequency[nums[i]]){
             frequency[nums[i]] += 1
@@ -7,9 +9,9 @@ var topKFrequent = function(nums, k) {
             frequency[nums[i]] = 1
         }
     } 
-    // console.log(frequency) 
+    // create an array of all the frequencies sorted in descending order
     let freqArr = Object.keys(frequency).sort((a, b) => frequency[b] - frequency[a]);
-    // console.log(freqArr)
+    // slice the array at the kth element
     return freqArr.slice(0, k)
 };
 
