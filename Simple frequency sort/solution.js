@@ -19,3 +19,32 @@ function solve(arr){
     }
     return sorted
   }
+
+  function solveV2(arr) {
+    let cache = {}
+    const counter = (n, arr) => {
+        if(cache[n]){
+            return cache[n]
+        }
+        let count = 0
+    for(let index in arr){
+        if(arr[index] === n){
+            count ++
+        }
+    }
+    cache[n] = count
+    return count
+    }
+    arr.sort((a, b) => {
+        if(counter(a, arr) < counter(b, arr)){
+            return 1
+        }
+        if (counter(a, arr) > counter(b, arr)){
+            return -1
+        }
+        if (counter(a, arr) === counter(b, arr)){
+            return a - b
+        }
+    })
+    return arr
+}
