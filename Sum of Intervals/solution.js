@@ -5,6 +5,13 @@ function sumIntervals(intervals){
       final.push(i)
     }
   });
+  console.log(final)
   final = [...new Set(final)];
   return final.length
 }
+
+console.log(sumIntervals( [
+  [1,2],
+  [6, 10],
+  [11, 15]
+] ))
