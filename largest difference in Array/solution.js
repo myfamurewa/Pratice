@@ -23,3 +23,18 @@ function largestDifference(arr) {
 
   test2 = [ 1162, 1094, 880, 585, 1124, 869, 339, 582, 1367, 1222, 1193, 160, 320, 1337, 1284 ]
   console.log(largestDifference(test2))
+
+  function largestDifference(arr) {
+    let maxDiff = 0;
+    let min = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > min && maxDiff < arr[i] - min) {
+        maxDiff = arr[i] - min;
+      }
+  
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+    }
+    return maxDiff;
+    }
