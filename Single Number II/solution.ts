@@ -10,3 +10,4 @@ function singleNumber(nums: number[]): number {
     let countArr = Object.entries(count)
     return Number(countArr.filter(arr => arr[1] === 1)[0][0])
 };
+
