@@ -28,4 +28,17 @@ class Solution {
         }
         return current.val
     }
+
+    getRandomALT() {
+        let cnt = 0, res = null;
+        
+        for (let node = this.head; node !== null; node = node.next) {
+            let r = Math.floor(Math.random() * ++cnt);
+            if (r === 0) {
+                res = node;        
+            }
+        }
+        
+        return res.val;
+    }
 }
