@@ -29,7 +29,7 @@ class Solution {
         return current.val
     }
 
-    getRandomALT() {
+    getRandomAlt() {
         let cnt = 0, res = null;
         
         for (let node = this.head; node !== null; node = node.next) {
