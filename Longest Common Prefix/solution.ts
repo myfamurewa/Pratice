@@ -22,9 +22,7 @@ function longestCommonPrefix(strs: string[]): string {
         let teststr: string = strs[0].slice(0, i + 1)
         let testoutput = strs.filter(str => str.startsWith(teststr))
         if(testoutput.length === strslength){
-            console.log("return str before", returnStr, "i", i, "teststr", teststr)
             returnStr += teststr[teststr.length - 1]
-            console.log("return str after", returnStr)
         } else {
             break
         }
