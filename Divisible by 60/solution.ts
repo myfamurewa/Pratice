@@ -13,10 +13,7 @@ this solution would have O(n^2) time complexity and O(1) space complexity
 */
 
 function numPairsDivisibleby60(time: number[]): number {
-    if(time.length === 0){
-        return 0
-    }
-    if(time.length === 1){
+    if(time.length < 2){
         return 0
     }
     let returnVal = 0
@@ -29,3 +26,15 @@ function numPairsDivisibleby60(time: number[]): number {
     }
     return returnVal
 }
+
+const numPairsDivisibleBy60ALT = (time: number[]): number => {
+    const appearDic = {};
+    let ans = 0;
+    time.forEach(el => {
+        const mod = el % 60;
+        const left = (60 - mod) % 60;
+        ans += appearDic[left] ? appearDic[left] : 0;
+        appearDic[mod] = appearDic[mod] ? appearDic[mod] + 1 : 1;
+    });
+    return ans;
+};
