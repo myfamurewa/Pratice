@@ -17,9 +17,7 @@ function countOddsV2(low: number, high: number): number {
         start = low + 1
     }
     for(let i = start; i <= high; i+= 2){
-        if(i % 2 === 1){
             count++
-        }
     }
     return count
 }
