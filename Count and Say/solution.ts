@@ -63,3 +63,7 @@ function countAndSayV2(n: number, prevSeq: any): string {
     
     return countAndSay(n-1, nextSeq + digitCount + prevDigit)
 }
+
+function countAndSayV3(n: number): string {
+    return n === 1 ? '1' : countAndSay(n - 1).match(/(.)\1*/g).map(match => match.length + match[0]).join('');
+}
