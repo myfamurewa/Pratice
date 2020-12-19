@@ -1,4 +1,4 @@
-function validParentheses(braces){
+function validParentheses(braces: string): boolean{
     //TODO 
     if(!braces){
       return true

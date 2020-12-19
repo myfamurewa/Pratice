@@ -9,7 +9,7 @@ function strStr(haystack: string, needle: string): number {
     }
 };
 
-var strStrALT = function(haystack, needle) {
+var strStrALT = function(haystack: string, needle: string): number {
     if(!needle) {
       return 0;
     }
