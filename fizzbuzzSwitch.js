@@ -23,7 +23,7 @@ function fizzBuzz(){
     for ( let i = 1; i <= 100; i++){
         let output = ""
 
-        switch(true){
+        switch(i){
 
             case ( i % 5 === 0 && i % 3 === 0):
                 output += "Fizzbuzz"
@@ -46,3 +46,4 @@ function fizzBuzz(){
     }
 }
 console.log(fizzBuzz())
+
