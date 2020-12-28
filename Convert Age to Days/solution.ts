@@ -9,4 +9,5 @@ function calcAgeAdvanced(birthdate: string | number): number {
         birthdate = Date.parse(birthdate)
     }
     let now = Date.now()
+    return 0
 }
