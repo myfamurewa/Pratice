@@ -35,21 +35,36 @@ function calcAgeAtSpecificDate(
   }
   let diffTime = Math.abs(specificDate - birthdate);
   let diffYears = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 365));
+  console.log(diffTime - diffYears * 1000 * 60 * 60 * 24 * 365 )
   let diffDays =
-    diffYears > 1
+    diffYears >= 1
       ? Math.floor(
           (diffTime - diffYears * 1000 * 60 * 60 * 24 * 365) /
             (1000 * 60 * 60 * 24)
         )
       : Math.floor(diffTime / (1000 * 60 * 60 * 24));
-  return diffDays > 0
-    ? `${diffYears} years and ${diffDays} days`
-    : "it's the same day";
+      console.log(diffDays, diffYears)
+  if(diffDays >= 1 || diffYears >= 1){
+    if(diffDays && diffYears === 0){
+      return diffDays > 1? `${diffDays} days` : `${diffDays} day`
+    } else if (diffYears && diffDays === 0){
+      return diffYears > 1? `${diffYears} years` : `${diffYears} year` 
+    } else {
+      if (diffDays > 1 && diffYears > 1){
+        return `${diffYears} years and ${diffDays} days`
+      } else if (diffDays > 1 && diffYears === 1){
+        return `${diffYears} year and ${diffDays} days`
+      } else if (diffDays === 1 && diffYears > 1){
+        return `${diffYears} years and ${diffDays} day`
+      }
+    }
+  }
+  return `it's the same day`
 }
 
-console.log(calcAgeAdvanced("7/12/2020"));
-console.log(calcAgeAdvanced("12/28/2020"));
-console.log(calcAgeAdvanced("12/25/2020"));
-console.log(calcAgeAdvanced("05/08/1996"));
-console.log(calcAgeAdvanced(0));
-console.log(calcAgeAtSpecificDate("05/08/1996", "05/08/1997"));
+// console.log(calcAgeAdvanced("7/12/2020"));
+// console.log(calcAgeAdvanced("12/28/2020"));
+// console.log(calcAgeAdvanced("12/25/2020"));
+// console.log(calcAgeAdvanced("05/08/1996"));
+// console.log(calcAgeAdvanced(0));
+console.log(calcAgeAtSpecificDate("05/08/1996", "12/29/2020"));
