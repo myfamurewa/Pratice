@@ -20,25 +20,36 @@ function fizzbuzz(num){
 console.log(fizzbuzz(100))
 
 function fizzBuzz(){
+    function test(i){
+        if(i % 5 === 0 && i % 3 === 0){
+            return 1
+        } else if (i % 3 === 0) {
+            return 2
+        } else if (i % 5 === 0){
+            return 3
+        } else {
+            return -1
+        }
+    }
     for ( let i = 1; i <= 100; i++){
         let output = ""
 
-        switch(i){
+        switch(test(i)){
 
-            case ( i % 5 === 0 && i % 3 === 0):
-                output += "Fizzbuzz"
+            case 1:
+                output += " Fizzbuzz,"
                 break;
             
 
-            case (i % 3 === 0):
-                output += "Fizz"
+            case 2:
+                output += " Fizz,"
                 break;
             
-            case (i % 5 === 0):
-                output += "Buzz"
+            case 3:
+                output += " Buzz,"
                 break;
             default:
-                output = i;
+                output = ` ${i},`;
                 break
 
         }
