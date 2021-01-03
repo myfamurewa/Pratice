@@ -3,9 +3,9 @@ function isfibo(n: number): boolean {
     return n > 0 && Math.sqrt(n) % 1 === 0;
   }
   if (isSquare(5 * (n * n) - 4) || isSquare(5 * (n * n) + 4)) {
-    return true;
+    return true // in the challenge this should be the string "isFibo";
   } else {
-    return false;
+    return false // in the challenge this should be the string "isNotFibo";
   }
 }
 
