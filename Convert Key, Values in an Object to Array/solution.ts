@@ -1,3 +1,3 @@
-function objectToArray(obj: object): Array {
+function objectToArray(obj: object): [] {
     return Object.entries(obj)
 }
