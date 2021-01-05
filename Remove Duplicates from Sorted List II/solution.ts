@@ -7,8 +7,35 @@
          }
      }
 
-
 function deleteDuplicatesII(head: ListNode | null): ListNode | null {
+    if(head === null){
+        return null
+    }
+    let current = head
+    let tempNode = new ListNode(0)
+    tempNode.next = head
+    let count = {}
+    while(current !== null){
+        if(count[current.val]){
+            count[current.val] += 1 
+        } else {
+            count[current.val] = 1
+        }
+    }
+    current = head
+    let previous = tempNode
+    while(current !== null){
+        if(count[current.val] > 1){
+            previous.next = current.next
+        } else {
+            previous = current
+        }
+        current = current.next
+    }
+    return tempNode.next
+}
+
+function deleteDuplicatesIIFinal(head: ListNode | null): ListNode | null {
     let tempNode = new ListNode(0)
     tempNode.next = head
 
