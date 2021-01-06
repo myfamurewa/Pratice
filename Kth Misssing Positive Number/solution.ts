@@ -8,7 +8,7 @@ function findKthPositive(arr: number[], k: number): number {
     }
 }
 
-function findKthPositive(arr: number[], k: number): number {
+function findKthPositiveII(arr: number[], k: number): number {
     let numberMissing = 0
     let currentNumber = 1
     for(let i = 0; i < arr.length; i++){
