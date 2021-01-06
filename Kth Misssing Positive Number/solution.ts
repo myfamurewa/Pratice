@@ -8,35 +8,35 @@ function findKthPositive(arr: number[], k: number): number {
     }
 }
 
-function findKthPositiveII(arr: number[], k: number): number {
+function findKthPositiveBinary(arr: number[], k: number): number {
+
+}
+
+function findKthPositiveMyWayImproved(arr: number[], k: number): number {
     let numberMissing = 0
-    let currentNumber = 1
     for(let i = 0; i < arr.length; i++){
-        if(numberMissing === k){
-            return currentNumber
-        }
-        if(arr[i] === currentNumber){
-            currentNumber += 1
-        }else if (arr[i] - currentNumber > 1){
-            while(currentNumber < arr[i]){
-                numberMissing += 1
-                currentNumber += 1
-                 if(numberMissing === k){
-                    return currentNumber
-                }
+        if(i === 0){
+            numberMissing += arr[0] - 1;
+            if(numberMissing >= k) {
+                return k
             }
-
-        }else {
-            numberMissing += 1
-            currentNumber += 1
+        } else {
+            numberMissing += arr[i] - arr[i - 1] - 1;
+            if(numberMissing >= k){
+                numberMissing -= arr[i] - arr[i - 1] - 1;
+                let result = arr[i - 1]
+                while(numberMissing++ < k){
+                    result++
+                }
+                return result
+            }
         }
     }
-    while(numberMissing < k){
-        numberMissing += 1
-        currentNumber += 1
+    let result = arr[arr.length - 1]
+    while(numberMissing++ < k){
+        result++
     }
-    return currentNumber
-
+    return result
 };
 
 const test1 = [2,3,4,7,11]
