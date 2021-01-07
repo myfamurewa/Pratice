@@ -36,6 +36,19 @@ function addDigitsOptimal(num: number): number {
     return 1 + (num - 1) % 9
 }
 
+function addDigitsRecursive(num: number): number {
+    if(num < 10){
+        return num 
+    }
+    let total = String(num).split("").map(number => Number(number)).reduce((acc, cv) => {
+        return acc + cv
+    }, 0)
+    if(total < 10){
+        return total
+    } else {
+        return addDigits(total)
+    }
+}
 
 console.log(addDigits(38))
 console.log(addDigits(99))
