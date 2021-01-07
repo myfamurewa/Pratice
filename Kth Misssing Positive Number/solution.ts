@@ -8,9 +8,7 @@ function findKthPositive(arr: number[], k: number): number {
     }
 }
 
-function findKthPositiveBinary(arr: number[], k: number): number {
 
-}
 
 function findKthPositiveMyWayImproved(arr: number[], k: number): number {
     let numberMissing = 0
