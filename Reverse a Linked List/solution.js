@@ -22,3 +22,19 @@ function reverseRecursive(head){
       head.next = undefined;
       return tmp;
 }
+
+function reverseIterative(head){
+    if(head === null || head.next === null){
+        return head
+    }
+    let current = head
+    let previous = null
+    let next = null
+    while(current){
+        next = current.next
+        current.next = previous
+        previous = current
+        current = next
+    }
+    return previous
+}
