@@ -17,7 +17,7 @@ function reverseVowels(s: string): string {
     return arr.join('');
 }
 
-function reverseVowelsII = function(s: string): string {
+function reverseVowelsII(s: string): string {
     const vowels = s.split('').filter(a => /[aeiou]/i.test(a));
     return s.split(/[aeiou]/i).reduce((res, a) => res + a + (vowels.pop() || ''), '');
 };
