@@ -11,7 +11,7 @@ function validParentheses(braces: string): boolean{
       "[": "]",
       "{": "}",
     };
-    for (let i in braces) {
+    for (let i = 0; i < braces.length; i++) {
       if (braces[i] === "(" || braces[i] === "[" || braces[i] === "{") {
         stack.push(braces[i]);
       } else {
