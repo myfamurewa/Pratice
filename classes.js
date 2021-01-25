@@ -44,3 +44,8 @@ class Name {
         this.initials = `${fname[0].toUpperCase()}.${lname[0]}`
     }
 }
+
+let Mike = new Name("Famurewa", "Michael"
+)
+
+console.log(Mike.initials)
