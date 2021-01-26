@@ -13,3 +13,8 @@ async function doSomething() {
 }
 
 console.log(doSomething())
+
+
+let maxed = [23, 24, 25, 26, 17]
+let mode = Math.max(...maxed)
+console.log(mode)
