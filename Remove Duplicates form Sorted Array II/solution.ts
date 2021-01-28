@@ -38,3 +38,12 @@ function removeDuplicates(nums: number[]): number {
   
     return j;
 };
+
+function removeDuplicatesII(nums: number[]): number {
+  if (nums.length <= 1) return nums.length;
+   let i = 1;
+   while (i < nums.length) {
+     nums[i] === nums[i - 1] ? nums.splice(i, 1) : i++;
+   }
+   return nums.length;
+ };
