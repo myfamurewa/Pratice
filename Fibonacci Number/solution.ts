@@ -23,7 +23,7 @@ var fibII = function(n,hash={ 0:0,1:1 }) {
     if(hash[n] !== undefined) return hash[n];
 
     else
-        hash[n] = fib(n-1,hash) + fib(n-2,hash)
+        hash[n] = fib(n-1, hash) + fib(n-2, hash)
     
     return hash[n];
 };
