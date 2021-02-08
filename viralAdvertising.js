@@ -16,3 +16,4 @@ const viralAdvertising = (n) => {
     return shared
 } // I need to reed instuctions more closely
 console.log(viralAdvertising(5))
+// fix the fixer
