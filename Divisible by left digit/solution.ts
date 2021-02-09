@@ -16,3 +16,8 @@ function divisibleByLeft(n: number): boolean[] {
     }
     return returnArr
 }
+
+function divisibleByLeftOneliner(n){
+    return [...n+=''].map((v,i)=>v%n[i-1]==0)
+}
+// one liner but not easily readable
