@@ -27,3 +27,25 @@ function findCircleNum(isConnected: number[][]): number {
 // we need to find how many provinces exist in an array
 // a province is a group of all connected cities
 // 
+function findCircleNumII(isConnected: number[][]): number {
+    function travel(city: number): void {
+        for(let i = 0; i < isConnected.length; i++) {
+            if(i !== city && isConnected[i][i] === 1 && isConnected[city][i] === 1) {
+                isConnected[city][i] = 0;
+                isConnected[i][city] = 0;
+                isConnected[i][i] = 0;
+                isConnected[city][city] = 0;
+                travel(i);
+            }
+        }
+    }
+    
+    let provinces: number = 0;
+    for(let city: number = 0; city < isConnected.length; city++) {
+        if(isConnected[city][city] === 1){
+            travel(city);
+            provinces++;
+        }
+    }
+    return provinces;
+};
