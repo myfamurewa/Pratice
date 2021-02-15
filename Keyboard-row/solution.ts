@@ -6,3 +6,5 @@ function findWords(words: string[]): string[] {
          return presentInTopRow||presentInTMidRow||presentInTBottomRow;
      });   
  };
+
+ //better
