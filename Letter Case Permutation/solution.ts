@@ -24,7 +24,7 @@ function letterCasePermutation(S: string): string[] {
     }
     permutations.push(upperCaseString)
     permutations.push(lowerCaseString)
-    return [permutations
+    return permutations
 };
 
 let test1 = "a1b2"
@@ -56,3 +56,5 @@ function letterCasePermutationII(S: string): string[] {
     return res
 }
 console.log(letterCasePermutation(test1))
+
+
