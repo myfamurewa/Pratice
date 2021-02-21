@@ -7,6 +7,7 @@ function strToNum(str: string): number {
         return -1
     }
     let digits = {
+        "0": 0,
         "1": 1,
         "2": 2,
         "3": 3, 
