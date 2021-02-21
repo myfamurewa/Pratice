@@ -36,3 +36,7 @@ console.log(longestWord(test1))
 console.log(longestWord(test2))
 console.log(longestWord(test3))
 console.log(longestWord(test4))
+
+function coneVolume(h: number, r: number): number {
+	return (h/3) * (Math.PI * (r**2))? Number(((h/3) * (Math.PI * (r**2))).toFixed(2)) : 0
+}
