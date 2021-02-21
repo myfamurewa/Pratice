@@ -63,3 +63,4 @@ function fullRomanConverter(input) {
 console.log(fullRomanConverter("XVII"))
 console.log(fullRomanConverter(1776))
 console.log(fullRomanConverter("CVII"))
+// full conversion
