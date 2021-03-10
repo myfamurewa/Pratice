@@ -27,6 +27,7 @@ var reverseStringMoreEfficient = function(s: string[]): void {
 //     [s[i], s[length - 1]] = [s[length - 1], s[i]]
 // }
 
+
 let test1 = ["o", "r", "a", "n", "g", "e"]
 let test2 = "calculator".split("")
 reverseString(test1)
